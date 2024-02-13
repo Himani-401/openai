@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPEN AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    <nav>
+        <section class="bar">
+        <img src="data:image/png;base64,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" height="30px" width="120px">
+
+
+
+
+
+
+
+<span class="front">
+<div style="margin-right:80px ;">
+        <li class="nav-item dropdown" style="list-style-type: none;">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Research
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">overview</a></li>
+              <li><a class="dropdown-item" href="#">index</a></li>
+              <li><a class="dropdown-item" href="#">GPT-4</a></li>
+              <li><a class="dropdown-item" href="#">DALL·E 3</a></li>
+            </ul>
+          </li>
+    </div>
+
+
+
+<div style="margin-right:80px ;">
+    <li class="nav-item dropdown" style="list-style-type: none;">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          API
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">overview</a></li>
+          <li><a class="dropdown-item" href="#">Pricing</a></li>
+          <li><a class="dropdown-item" href="#">Docs</a></li>
+        </ul>
+      </li>
+</div><div>
+      <a href="#" style="text-decoration: none;color:white; margin-right:80px ;">safety</a></div>
+
+      <div style="margin-right:80px ;">
+      <li class="nav-item dropdown"style="list-style-type: none;">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          ChatGPT
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Overview</a></li>
+            <li><a class="dropdown-item" href="#"> Team</a></li>
+            <li><a class="dropdown-item" href="#">Enterprise</a></li>
+          <li><a class="dropdown-item" href="#">Pricing</a></li>
+          <li><a class="dropdown-item" href="#">Try ChatGPT</a></li>
+        </ul>
+      </li></div>
+
+
+
+<div style="margin-right:80px ;">
+      <li class="nav-item dropdown"style="list-style-type: none;">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Company
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">about</a></li>
+            <li><a class="dropdown-item" href="#"> blog</a></li>
+            <li><a class="dropdown-item" href="#">careers</a></li>
+          <li><a class="dropdown-item" href="#">residency</a></li>
+          <li><a class="dropdown-item" href="#">charter</a></li>
+          <li><a class="dropdown-item" href="#">security</a></li>
+          <li><a class="dropdown-item" href="#">Customer stories</a></li>
+          
+        </ul>
+      </li></div>
+    </span>
+      <span class="rest">
+      <a href="#"style="text-decoration: none; color:white; margin-right:10px;padding-right:50px">Search</a>
+      <a href="#"style="text-decoration: none;color:white; margin-right:10px ;padding-right:50px">Login</a>
+      <a href="#"style="text-decoration: none;color:white ;margin-right:10px ;padding-right:50px">Try ChatGPT</a></section>
+      </span></nav>
+    
+    
+
+
+
+
+    <div class="vd">
+
+    <div class="video-background">
+        <div class="video-wrap">
+            <video id="videoBG" autoplay muted loop>
+                <source src="https://openaicomproductionae4b.blob.core.windows.net/production-twill-01/121dd5e0-eaea-424d-bdf2-db02ca1f5e55/gpt-4-92586ac_1080p60.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="heading">
+<h>Creating safe AGI 
+    that benefits<br> all of humanity</h>
+    <div class="b1">
+        <button class="but1">learn about openai</button></div></div></div>
+    
+<div class="all">
+    <div class="tx">
+        <div class="txt1">
+    <p style="color: aliceblue;">
+        Pioneering research on the <br>path to AGI
+    </p>
+    <a href="#" style="color: aliceblue;font-size:18px ;">
+        Learn about our research
+
+    </a></div>
+    <div class="txt2">
+    <p style="color: aliceblue;">
+        Transforming work and <br>creativity with AI
+    </p>
+    <a href="#" style="color: aliceblue;font-size:18px ;">
+        explore our products
+
+    </a></div>
+    <div class="txt3">
+    <p style="color: aliceblue;">
+        Join us in shaping the future of<br> technology
+    </p>
+    <a href="#" style="color: aliceblue;font-size:18px ;">
+        view careers</a></div></div>
+    
+        <div class="horizontal-line"></div>
+
+    <div class="lat">
+    <h style="font-size:45px; color: aliceblue;">
+        latest updates
+    </h>
+    <a href="#" style="color: aliceblue; ">view all updates</a><br></div><br><br><div class="new">
+    <div class="im1">
+    <img src="https://images.openai.com/blob/d77c453f-fa97-4a74-9363-5fee31a478be/memory-and-new-controls-for-chatgpt.png?trim=0,0,0,0&width=800" height="330px" width="330px">
+    
+    <a href="#" style="color: aliceblue;">Memory and new controls for ChatGPT</a><date>Feb 13, 2024</date></div>
+    <div class="im2">
+        
+    <img src="https://images.openai.com/blob/ec19d092-e613-41c0-8dcb-57e030658420/new-embeddings-models-and-api-updates.jpg?trim=0,0,0,0&width=800"height="330px" width="330px">
+    <a href="#" style="color: aliceblue;">New embedding models and API updates</a><date>Jan 25, 2024</date></div>
+    <div class="im3">
+    <img src="https://images.openai.com/blob/f50ce1d2-4f61-4ed2-86ca-556773bee5ee/democratic-inputs-to-ai-grant-program-update.png?trim=0,0,0,0&width=800"height="330px" width="330px">
+    <a href="#" style="color: aliceblue;">Democratic inputs to AI grant program:<br> lessons learned and implementation plans</a><date>Jan 16, 2024</date></div>
+    <div class="im4">
+    <img src="https://images.openai.com/blob/d78a3b67-71f0-4487-901e-5b0099cbaa80/how-openai-is-approaching-2024-worldwide-elections.jpg?trim=0,0,0,0&width=800"height="330px" width="330px">
+    <a href="#" style="color: aliceblue;">How OpenAI is approaching 2024 worldwide elections</a><date>Jan 15, 2024</date></div></div>
+    <br><br>
+    <div class="horizontal-line"></div>
+
+    <div class="safe">
+    <div><p style="font-size:45px; color: aliceblue;">Safety & responsibility</p></div>
+    <div>
+    <p style="color: aliceblue; font-size: 26px;">Our work to create safe and beneficial AI requires a deep <br>understanding of the potential risks and benefits, as well as<br> careful consideration of the impact.</p>
+    <a href="#" style="color: aliceblue;">Learn about safety</a><br></div></div>
+    <img src="https://images.openai.com/blob/971cb9d4-66e4-46b0-95d8-f3b57931b08e/stangel-2022-0052.jpg?trim=0,0,0,0&width=2000" height="1200" width="1400px"><br><br><br><br><br>
+    <div class="horizontal-line"></div>
+    <div class="safe2">
+        <div>
+    <h style="font-size:45px;color: aliceblue;">
+        Research
+    </h></div>
+    <div style="padding-bottom: 100px;">
+    <p style="color: aliceblue; font-size:25px">
+        We research generative models and how to align them with <br>human values.
+    </p><br>
+   <a href="#" style="color: aliceblue;">Learn about our research</a><br></div></div>
+   
+   <div class="new2">
+    <div class="im1">
+        <img src="https://images.openai.com/blob/ec66425e-99ca-4314-9999-70e6010c8162/building-an-early-warning-system-for-llm-aided-biological-threat-creation.jpg?trim=0,0,0,0&width=800" height="300px" width="300px">
+        
+        <a href="#" style="color: aliceblue;">Building an early warning system for LLM-<br>aided biological threat creation</a><date>Jan 31, 2024</date></div>
+        <div class="im2">
+            
+        <img src="https://images.openai.com/blob/3ae4eaf0-e103-445d-8974-12da0a9934c0/weak-to-strong-generalization.jpg?trim=0,345,0,310&width=800"height="300px" width="300px">
+        <a href="#" style="color: aliceblue;"> Weak To Strong Generalization</a><date></date></div>
+        <div class="im3">
+        <img src="https://images.openai.com/blob/dfdeca52-d054-4ce9-aabc-3386f24873d8/practices-for-governing-agentic-ai-systems.jpg?trim=0,0,0,0&width=800"height="300px" width="300px">
+        <a href="#" style="color: aliceblue;">Practices for Governing Agentic AI Systems</a><date>Dec 14, 2023</date></div>
+        <div class="im4">
+        <img src="https://images.openai.com/blob/de9e8dc2-a39b-46c9-b7a0-54dd5c56b1df/dall-e-3-system-card.png?trim=0,0,0,0&width=800"height="300px" width="300px">
+        <a href="#" style="color: aliceblue;">DALL·E 3 system card</a><date>Dec 14, 2023</date></div></div>
+<br><br>
+<div class="horizontal-line"></div>
+
+    <div class="new3">
+    <h style="font-size:45px; color: aliceblue;">
+        Products
+    </h>
+    <div>
+    <p style="color: aliceblue; font-size: 26px;">
+        Our API platform offers our latest models and guides for<br> safety best practices.
+    </p>
+   <a href="#" style="color: aliceblue;">Explore our products</a></div></div>
+   <div class="new4">
+    <div class="im1">
+        <img src="https://images.openai.com/blob/d77c453f-fa97-4a74-9363-5fee31a478be/memory-and-new-controls-for-chatgpt.png?trim=0,0,0,0&width=800" height="300px" width="300px">
+        
+        <a href="#" style="color: aliceblue;">Memory and new controls for ChatGPT
+            </a><date></date></div>
+        <div class="im2">
+            
+        <img src="https://images.openai.com/blob/ec19d092-e613-41c0-8dcb-57e030658420/new-embeddings-models-and-api-updates.jpg?trim=0,0,0,0&width=800"height="300px" width="300px">
+        <a href="#" style="color: aliceblue;">New Embeddings Models And API Updates</a><date></date></div>
+        <div class="im3">
+        <img src="https://images.openai.com/blob/cc305f9e-cb40-426f-a8b8-b18ddd576588/team-hero-for-blog.jpg?trim=0,528,0,521&width=800"height="300px" width="300px">
+        <a href="#" style="color: aliceblue;">Introducing ChatGPT Team</a><date></date></div>
+        <div class="im4">
+        <img src="https://images.openai.com/blob/0b8b7a8b-25ef-4d64-9dc6-6c26242dffbb/gpt-store-r3.png?trim=0,883,0,77&width=800"height="300px" width="300px">
+        <a href="#"style="color: aliceblue;">Introducing ChatGPT Team</a><date></date></div>
+   </div>
+   <br><br>
+   <div class="horizontal-line"></div>
+
+    <div class="new5">
+    <h style="font-size:45px;color: aliceblue;">
+        Careers at OpenAI
+    </h><div  style="font-size: x-large;">
+    <p style="color: aliceblue;">
+        Developing safe and beneficial AI requires people from a wide<br> range of disciplines and backgrounds.
+    </p>
+   <a href="#" style="color: aliceblue; font-size: medium;">View careers</a><br></div></div>
+   <img src="https://images.openai.com/blob/47e8bf4c-ffd5-4b80-b481-568ed1329f97/stangel-2022-1598.jpg?trim=0,0,0,0&width=2000"height="1200px" width="1400px">
+   <div class="auth">
+    <div>
+   <p style="color: aliceblue; font-size:40px;">"I encourage my team to keep<br> learning. Ideas in different<br> topics or fields can often inspire<br> new ideas and broaden the <br>potential solution space."</p>
+    <br>
+<p style="color:aliceblue ;font-size: 20px;">
+    Lilian Weng<br>
+    Applied AI at OpenAI</p></div>
+    <img src="https://images.openai.com/blob/734af367-24c1-4043-934c-269a6a3ec47e/stangel-2022-0484.jpg?trim=0,537,40,462&width=2000"height="700px" width="700px"></div>
+    <br><br>
+    <div class="horizontal-line"></div>
+
+    <h style="font-size: 60px; color: aliceblue; margin-bottom: 30px;">Join us in shaping the future of technology.
+    </h><br><br><br>
+    <div class="b2">
+    <button class="but2">
+        view careers
+    </button></div>
+    <br><br><br>
+    </div>
+</body>
+<footer>
+    <div class="last">
+        <img src="data:image/png;base64,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" height="30px" width="120px">
+        <div style="margin-left: 200px;">
+            <h4>Research<ul style="list-style: none; ">
+                    <br>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">Overview </a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">Index</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">GPT-4</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">DALL·E 3</a></li>
+                    
+                </ul>
+            </h4></div>
+            <h4>API<ul style="list-style: none;">
+                    <br>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">overview</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">Pricing</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">Docs</a></li>
+                    
+                </ul>
+            </h4>
+            <h4>ChatGPT<ul style="list-style: none;">
+                    <br>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">Overview</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">Team</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">Enterprise</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">Pricing</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">Try ChatGPT</a></li>
+
+                </ul>
+            </h4>
+            <h4>Company<ul style="list-style: none;">
+                    <br>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">About</a> </li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">Blog</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;"> Careers</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;"> Charter</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;"> Security</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;"> Customer stories</a></li>
+                    <li><a href="#" style="color: aliceblue;text-decoration: none;">Safety</a></li>
+                </ul>
+            </h4>
+            </div>
+            <div class="horizontal-line"></div>
+            <div class="end">
+            <ul style="list-style-type: none;">
+                <li><a href="#"style="color: aliceblue;text-decoration: none;" >OpenAI © 2015 – 2024</a></li>
+                <li><a href="#"style="color: aliceblue;text-decoration: none;">Terms & policies</a></li>
+                <li><a href="#"style="color: aliceblue;text-decoration: none;"> Privacy policy</a></li>
+                <li><a href="#"style="color: aliceblue;text-decoration: none;"> Brand guidelines</a></li>
+            </ul>
+            
+            <ul style="list-style-type: none; "><div class="end2">
+                <li style="width: 60px;"><a href="https://twitter.com/"style="color: aliceblue;text-decoration: none;">Twitter</a></li>
+                <li style="width: 80px;"><a href="https://youtube.com/"style="color: aliceblue;text-decoration: none;">Youtube</a></li>
+                <li style="width: 60px;"><a href="https://Github.com/"style="color: aliceblue;text-decoration: none;"> Github</a></li>
+                <li style="width: 60px;"><a href="https://Linkedin.com/"style="color: aliceblue;text-decoration: none;">Linkedin</a></li>
+</div>
+            </ul>
+            </div>
+        
+   
+
+</footer>
+</html>
